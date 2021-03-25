@@ -1,17 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Les Pokemons de Sacha </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Sacha : dresseur</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <section class="container">
+    <div *ngFor="let pokemon of allPokemons">
+      <h2>{{ pokemon.name }}</h2>
+      <figure>
+        <img [src]="pokemon.image" alt="pokemon.name" />
+        <p>Force : <span>{{ pokemon.strength }}</span></p>
+      </figure>
+    </div>
+  </section>
 </ion-content>
